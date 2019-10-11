@@ -19,21 +19,10 @@ Today's computers are a lot faster than the human mind and it is most likely tha
 Hence, using the text summarizer reduces our reading time, time spent in researching for information, and increases the amount of information that can fit in an area.
 
 
-
-
-
-
-
-
-
-
-
 Feasibility Report:
 
 Encoder and Decoder architecture  is used in Training as well as Testing Phase. 
 
-Fig.1
-The  model overview is shown in Fig.1. 
 Training Phase:
 An Encoder Long Short Term Memory model (LSTM) reads the entire input sequence wherein, at each timestep, one word is fed into the encoder. It then processes the information at every timestep and captures the contextual information present in the input sequence. The hidden state (hi) and cell state (ci) of the last time step are used to initialize the decoder.
 The decoder is also an LSTM network that reads the entire target sequence word-by-word and predicts the same sequence offset by one timestep. The decoder is trained to predict the next word in the sequence given the previous word. <start> and <end> are the special tokens that are added to the target sequence before feeding it into the decoder. 
@@ -45,21 +34,15 @@ Instead of looking at all the words in the source sequence, we can increase the 
 
 
 
-
-
 Literature Study:
 
 There have been various approaches for implementing an Automatic Text Summarizer. In the start researchers only focused on one component of sentence significance, namely, the presence of frequently occurring keywords. However, in the late 1950s in a paper published by Hans Peter Luhn, he used word frequency, phase frequency,  heading words, and structural indicators for the extraction of vital information from a given text.
 There are broadly two different approaches that are used for text summarization namely Abstractive and Extractive. Extractive text summarization involves the selection of phrases and sentences from the source document to make up the new summary. Abstractive text summarization involves generating entirely new phrases and sentences to capture the meaning of the source document.
 Extractive text summarization is implemented using a text rank algorithm. It is an extractive and unsupervised text summarization technique.
 
-Fig.2
 
 To begin with, we merge all the text in the articles and then split the text into individual sentences. In the next step, we find the sentence vectors and compute a similarity matrix to store the similarities between the calculated vectors. Further, we convert the matrix into a graph with sentences as vertices and similarity scores as edges, for sentence rank calculation. Finally, a certain number of top-ranked sentences form the final summary.
 The other approach is the abstractive one which has been discussed in detail in the design document.
-
-
-
 
 
 Conclusion:
