@@ -1,0 +1,54 @@
+Algorithm to be used:
+
+There are broadly two different approaches that are used for text summarization namely Abstractive and Extractive.
+
+Extractive text summarization involves the selection of phrases and sentences from the source document to make up the new summary.
+Techniques involve ranking the relevance of phrases in order to choose only those most relevant to the meaning of the source.
+
+Abstractive text summarization involves generating entirely new phrases and sentences to capture the meaning of the source document. 
+This is a more challenging approach but is also the approach ultimately used by humans.
+
+
+Our input is in the form of a long sequence of words and the output will be a short version of the input sequence.
+Hence, we would be implementing the abstractive technique using the Seq2Seq model. 
+It has two main components: Decoder and Encoder. We would be using an artificial Recurrent Neural Network, i.e. Long Short Term Memory (LSTM) for the encoder and decoder components. 
+This is because they are capable of capturing long term dependencies by overcoming the problem of vanishing gradient. Encoder-Decoder are used in training as well as testing phase. 
+
+
+Pseudocode for decoder :
+
+Function decode_sequence(input_seq) is
+    # Encode the input as state vectors.
+    e_out, e_h, e_c = encoder_model.predict(input_seq)
+    
+    # Generate empty target sequence of length 1.
+    target_seq = np.zeros((1,1))
+    
+    # Populate the first word of target sequence with the start word.
+    target_seq[0, 0] = target_word_index['sostok']
+
+    stop_condition = False
+    decoded_sentence = ' '
+
+    while not stop_condition do
+      
+        	output_tokens, h, c = decoder_model.predict([target_seq] + [e_out, e_h, e_c])
+
+       	 # Sample a token
+        	sampled_token_index = np.argmax(output_tokens[0, -1, :])
+        	sampled_token = reverse_target_word_index[sampled_token_index]
+        
+        	if(sampled_token!='eostok') then
+            decoded_sentence += ' '+sampled_token
+
+        	# Exit condition: either hit max length or find stop word.
+ if (sampled_token == 'eostok'  or len(decoded_sentence.split()) >=    (max_summary_len-1)) then                 
+stop_condition = True
+
+        # Update the target sequence (of length 1).
+        target_seq = np.zeros((1,1))
+        target_seq[0, 0] = sampled_token_index
+
+        # Update internal states
+        e_h, e_c = h, c
+ return decoded_sentence
