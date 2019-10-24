@@ -7,7 +7,7 @@ from tensorflow.python.keras import backend as K
 class AttentionLayer(Layer):
     """
     This class implements Bahdanau attention (https://arxiv.org/pdf/1409.0473.pdf).
-    There are three sets nijl of weights introduced W_a, U_a, and V_a
+    There are three sets of weights introduced W_a, U_a, and V_a
      """
 
     def __init__(self, **kwargs):
