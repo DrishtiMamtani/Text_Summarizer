@@ -1,0 +1,40 @@
+To get Reviews we need to develop a web scrapper. The reviews then obtained will be summarized by the developed text summarizer.
+
+Why the need for scraping reviews?
+
+1)
+Sentiment Analysis over the product reviews
+Sentiment analysis can be performed over the reviews scraped from products.
+Such study helps in identifying the user’s emotion towards a particular product.
+This can help in sellers or even other prospective buyers in understanding the public sentiment related to the product.
+
+2)
+Optimising dropshipping sales
+Drop shipping is a business type that allows a particular company to work without an inventory or a depository for the storage of its products. 
+You can use web scraping for getting product pricing, user opinions, understanding the needs of the customer and following up with the trend.
+
+3)
+Web scraping for online reputation monitoring
+It is difficult for large-scale companies to monitor their reputation of products. 
+Web scraping can help in extracting relevant review data which can act as input to different analysis tool to measure user’s sentiment towards the organisation.
+
+
+Scrapy is a web crawling framework for a developer to write code to create, which define how a particular site (or a group of websites) will be scrapped.
+The most significant feature is that it is built on Twisted, an asynchronous networking library, which makes the spider performance is very significant.
+
+
+Different stages involved in scraping amazon reviews 
+
+1)Analysing HTML structure of the webpage
+Scraping is about finding a pattern in the web pages and extracting them out. 
+Before starting to write a scraper, we need to understand the HTML structure of the target web page and identify patterns in it. 
+The pattern can be related to usage of classes, ids and other HTML elements in a repetitive manner.
+
+2)Scrapy parser implementation in Python
+After analysing the structure of the target web page, we work on the coded implementation in python.
+Scrapy parser’s responsibility is to visit the targeted web page and extract out the information as per the mentioned rules.
+
+3)Collection and Storage of Information
+The parser can dump out the results in any format you wish for be it CSV or JSON. 
+This is the final output while in which your scraped data resides.
+
