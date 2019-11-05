@@ -176,7 +176,7 @@ string
 # In[78]:
 
 
-#to get the string back from list of words
+#to get string back from list of words
 string=' '.join(string) 
 string
 
