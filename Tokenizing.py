@@ -69,7 +69,7 @@ data.info()
 # In[8]:
 
 
-# To remove unnecessary symbols we will define a dictionary for expanding the contractions
+# To remove unnecessary symbols a dictionary is defined for expanding the contractions
 contraction_mapping = {"ain't": "is not", "aren't": "are not","can't": "cannot", "'cause": "because", "could've": "could have", "couldn't": "could not",
                            "didn't": "did not",  "doesn't": "does not", "don't": "do not", "hadn't": "had not", "hasn't": "has not", "haven't": "have not",
                            "he'd": "he would","he'll": "he will", "he's": "he is", "how'd": "how did", "how'd'y": "how do you", "how'll": "how will", "how's": "how is",
@@ -136,7 +136,7 @@ def text_cleaner(text,num):
     String1 = re.sub(r"'s\b","",String1)
     String1 = re.sub("[^a-zA-Z]", " ", String1) 
     String1 = re.sub('[m]{2,}', 'mm', String1)
-    #removes all the stopwords
+    #removes all stopwords
     #tokens will be a list
     if(num==0):
         #for text remove the stop_words
