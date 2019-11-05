@@ -113,7 +113,7 @@ stop_words = set(stopwords.words('english'))
 stop_words
 
 
-# Defining function for test cleaning
+# Defining function for text cleaning
 
 # In[11]:
 
@@ -136,7 +136,7 @@ def text_cleaner(text,num):
     String1 = re.sub(r"'s\b","",String1)
     String1 = re.sub("[^a-zA-Z]", " ", String1) 
     String1 = re.sub('[m]{2,}', 'mm', String1)
-    #removes the stopwords
+    #removes all the stopwords
     #tokens will be a list
     if(num==0):
         #for text remove the stop_words
